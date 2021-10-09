@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [E2EPageObjectModelAutomation Test Suite]">
+  <listeners>
+    <listener class-name="ExtentReportListener.ExtentReporterNG"/>
+    <listener class-name="Analyzer.MyTransfarmer"/>
+  </listeners>
+  <test name="E2EPageObjectModelAutomation">
+    <classes>
+      <class name="com.qa.testcases.LoginPageTest"/>
+      <class name="com.qa.testcases.HomePageTest"/>
+      <class name="com.qa.testcases.ContactsPageTest"/>
+    </classes>
+  </test> <!-- E2EPageObjectModelAutomation -->
+</suite> <!-- Failed suite [E2EPageObjectModelAutomation Test Suite] -->

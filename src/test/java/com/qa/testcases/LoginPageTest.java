@@ -9,6 +9,11 @@ import com.qa.base.TestBase;
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 public class LoginPageTest extends TestBase {
 	LoginPage loginPage;
 	HomePage homepage;
@@ -22,7 +27,10 @@ public LoginPageTest(){
 		loginPage= new LoginPage();
 	}
 	
-	@Test
+	@Test(priority=1 ,description= "Verifyng loginpage title")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test description: Verify login page title test")
+	@Story("This is Story name test")
 	public void lgoinPageTitleTest(){
 		String title=loginPage.validateloginPageTile();
 		//Assert.assertEquals(title, "CRMPRO");
@@ -30,14 +38,20 @@ public LoginPageTest(){
 		
 	}
 	
-	@Test
+	@Test(priority=2 ,description= "Verifyng loginpage logo")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test description: Verify login page logo test")
+	@Story("This is Story name test")
 	public void crmLogoImageTest(){
 		boolean flag = loginPage.validateCRMImage();
 		Assert.assertTrue(flag);
 		
 	}
 		
-	@Test
+	@Test(priority=3 ,description= "Verifyng loginpage with valid details")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test description: Verify loginpage with valid details")
+	@Story("This is Story name test")
 	public void loginTest(){
 	homepage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	

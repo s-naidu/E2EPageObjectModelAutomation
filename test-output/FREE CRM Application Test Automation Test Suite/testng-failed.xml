@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FREE CRM Application Test Automation Test Suite]">
+  <test name="E2EPageObjectModelAutomation(failed)">
+    <classes>
+      <class name="com.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="crmLogoImageTest"/>
+          <include name="setUP"/>
+          <include name="lgoinPageTitleTest"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.qa.testcases.LoginPageTest -->
+      <class name="com.qa.testcases.ContactsPageTest">
+        <methods>
+          <include name="setUP"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.testcases.ContactsPageTest -->
+      <class name="com.qa.testcases.HomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUP"/>
+        </methods>
+      </class> <!-- com.qa.testcases.HomePageTest -->
+    </classes>
+  </test> <!-- E2EPageObjectModelAutomation(failed) -->
+</suite> <!-- Failed suite [FREE CRM Application Test Automation Test Suite] -->

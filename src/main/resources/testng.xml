@@ -4,6 +4,7 @@
 
 	<listeners>
 		<listener class-name="ExtentReportListener.ExtentReporterNG" />
+		<listener class-name="Analyzer.MyTransfarmer" />
 	</listeners>
 
 	<test name="E2EPageObjectModelAutomation">

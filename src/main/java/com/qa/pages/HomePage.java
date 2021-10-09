@@ -10,7 +10,7 @@ import com.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	@FindBy(xpath="//td[contains(text(),'User: sudarshandn naidu')]")
+	@FindBy(xpath="//td[contains(text(),sudarshandn naid')]")
 	@CacheLookup
 	WebElement userNameLabel;
 	

@@ -46,14 +46,14 @@ public TestBase(){
 public static void insilization() throws MalformedURLException{
 	
 	String browserName=prop.getProperty("browser");
-	DesiredCapabilities dr=null;
-	dr=DesiredCapabilities.chrome();
-	dr.setBrowserName("chrome");
-	dr.setPlatform(Platform.WINDOWS);
+	//DesiredCapabilities dr=null;
+	//dr=DesiredCapabilities.chrome();
+	//dr.setBrowserName("chrome");
+	//dr.setPlatform(Platform.WINDOWS);
 	if(browserName.equals("chrome")){
 		System.setProperty("webdriver.chrome.driver","D:/chromedriver/chromedriver.exe");
 
-		driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
+		//driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
 		//driver=new ChromeDriver();
 		
 	}

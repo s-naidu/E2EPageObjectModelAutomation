@@ -1,5 +1,7 @@
 package com.qa.testcases;
 
+import java.net.MalformedURLException;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,7 +27,7 @@ public class ContactsPageTest extends TestBase {
 	}
 	
 	@BeforeMethod
-	public void setUP() throws InterruptedException{
+	public void setUP() throws InterruptedException, MalformedURLException{
 		insilization();
 		testutil =new TestUtil();
 		contactsPage =new ContactsPage();
@@ -60,11 +62,10 @@ public class ContactsPageTest extends TestBase {
 	
 	
 	@Test(priority=3, dataProvider="getCRMTestData")
-	public void validateCreateNewContact(String title, String firstName, String lastName, String company) throws InterruptedException{
+	public void validateCreateNewContact(String title, String firstName, String lastName, String company){
 		homepage.clickOnNewContactLink();
 		
-		//contactsPage.createNewContact("Mr.", "Tom", "Peter", "Google");
-		contactsPage.createNewContact(title, firstName, lastName, company);
+    	contactsPage.createNewContact(title, firstName, lastName, company);
 		
 	}
 	

@@ -49,7 +49,11 @@ public static void insilization(){
 		System.setProperty("webdriver.chrome.driver","D:/chromedriver/chromedriver.exe");
 
 		//driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
+<<<<<<< HEAD
 		driver=new ChromeDriver();
+=======
+		//driver=new ChromeDriver();
+>>>>>>> 89e310e8aac9a667c5de6ece8a9ce3a2fed46f0f
 		
 	}else if(browserName.equals("FF")){
 		System.setProperty("webdriver.gecko.driver", "D:/geckodriver-v0.30.0-win64/geckodriver.exe");	

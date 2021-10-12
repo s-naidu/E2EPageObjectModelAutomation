@@ -3,17 +3,12 @@ package com.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.qa.util.TestUtil;
@@ -21,7 +16,7 @@ import com.qa.util.WebEventListener;
 
 public class TestBase {
 	public static WebDriver driver;
-	public static DesiredCapabilities dr=null;
+	//public static DesiredCapabilities dr=null;
 	public static Properties prop;
 	public  static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
@@ -43,28 +38,28 @@ public TestBase(){
 		}
 }
 
-public static void insilization() throws MalformedURLException{
+public static void insilization(){
 	
 	String browserName=prop.getProperty("browser");
-	DesiredCapabilities dr=null;
-	dr=DesiredCapabilities.chrome();
-	dr.setBrowserName("chrome");
-	dr.setPlatform(Platform.WINDOWS);
+	//DesiredCapabilities dr=null;
+	//dr=DesiredCapabilities.chrome();
+	//dr.setBrowserName("chrome");
+	//dr.setPlatform(Platform.WINDOWS);
 	if(browserName.equals("chrome")){
 		System.setProperty("webdriver.chrome.driver","D:/chromedriver/chromedriver.exe");
 
-		driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
-		//driver=new ChromeDriver();
+		//driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
+		driver=new ChromeDriver();
 		
+	}else if(browserName.equals("FF")){
+		System.setProperty("webdriver.gecko.driver", "D:/geckodriver-v0.30.0-win64/geckodriver.exe");	
+		driver = new FirefoxDriver(); 
 	}
 	e_driver = new EventFiringWebDriver(driver);
 	// Now create object of EventListerHandler to register it with EventFiringWebDriver
 	eventListener = new WebEventListener();
 	e_driver.register(eventListener);
 	driver = e_driver;
-	
-	
-		
 	
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();

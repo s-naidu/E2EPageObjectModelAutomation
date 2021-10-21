@@ -4,9 +4,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -54,7 +56,8 @@ public static void insilization() throws MalformedURLException{
 	//selenium grid setup
 	//DesiredCapabilities dr=null;
 	//dr=DesiredCapabilities.chrome();
-	//dr.setBrowserName("chrome");
+	//dr=DesiredCapabilities.firefox();
+	//dr.setBrowserName("firefox");
 	//dr.setPlatform(Platform.WINDOWS);
 	
 	//browser stack
@@ -71,15 +74,16 @@ public static void insilization() throws MalformedURLException{
 	if(browserName.equals("chrome")){
 		System.setProperty("webdriver.chrome.driver","D:/chromedriver/chromedriver.exe");
 
-		//selenium grid setup
-		//driver =new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"),dr);
+		//selenium grid setup on docker
+		//driver =new RemoteWebDriver(new URL("http://192.168.40.127:4444/wd/hub"),dr);
 		//driver =new RemoteWebDriver(new URL(URL),caps);
 		//driver =new RemoteWebDriver(new java.net.URL(URL),caps);
 
 		driver=new ChromeDriver();
 		
-	}else if(browserName.equals("FF")){
+	}else if(browserName.equals("firefox")){
 		System.setProperty("webdriver.gecko.driver", "D:/geckodriver-v0.30.0-win64/geckodriver.exe");	
+		//driver =new RemoteWebDriver(new URL("http://192.168.40.127:4444/wd/hub"),dr);
 		driver = new FirefoxDriver(); 
 	}
 	e_driver = new EventFiringWebDriver(driver);
